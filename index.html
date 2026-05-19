@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boys &amp; Girls Club of the Permian Basin — Impact Story</title>
+    <meta name="description" content="Great Futures Start HERE. See how Boys &amp; Girls Club of the Permian Basin serves nearly 1,000 kids every day in Odessa and Midland — and how you can help.">
+    <meta property="og:title" content="Boys &amp; Girls Club of the Permian Basin — Impact Story">
+    <meta property="og:description" content="Great Futures Start HERE. See how Boys &amp; Girls Club of the Permian Basin serves nearly 1,000 kids every day in Odessa and Midland — and how you can help.">
+    <meta property="og:image" content="https://anecdotal-media.github.io/bgc-permian-basin-impact-deck/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://anecdotal-media.github.io/bgc-permian-basin-impact-deck/og-image.png">
+    <link rel="icon" href="img/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Source+Serif+4:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #004A99;
+            --secondary: #E31837;
+            --accent: #FFD200;
+            --header-bg: #0066CC;
+            --header-text: #ffffff;
+        }
+        body {
+            font-family: 'Source Serif 4', serif;
+            background-color: color-mix(in srgb, var(--primary) 80%, black);
+            color: white;
+        }
+        h1, h2, h3, .font-display { font-family: 'Montserrat', sans-serif; }
+        @keyframes animationIn { 0% { opacity: 0; transform: translateY(30px); filter: blur(8px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0px); } }
+        @keyframes grow-right { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+        .animate-bar { transform-origin: left; transform: scaleX(0); animation: grow-right 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-play-state: paused; }
+        .bar-stage.animate .animate-bar { animation-play-state: running; }
+        .animate-on-scroll { animation: animationIn 0.8s ease-out both; animation-play-state: paused; }
+        .animate-on-scroll.animate { animation-play-state: running; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .slide-container { width: 90vw; height: 75vh; min-width: 0; }
+        @media (min-width: 768px) { .slide-container { width: 500px; height: auto; aspect-ratio: 3/4; } }
+        .bg-grid-pattern { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0); background-size: 32px 32px; }
+        .count-up { display: inline-block; }
+        @keyframes countPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .count-up.counting { animation: countPulse 0.1s ease-in-out; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center selection:bg-[var(--accent)]/30">
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-3 backdrop-blur-md border-b border-black/10 h-16" style="background-color: var(--header-bg); color: var(--header-text);">
+        <div class="flex items-center gap-3 w-auto md:w-1/3">
+            <img src="img/logo.png" alt="Boys &amp; Girls Club of the Permian Basin" class="h-10 w-auto object-contain">
+        </div>
+        <div id="pagination-dots" class="hidden sm:flex items-center justify-center gap-2 w-1/3">
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+            <div class="w-2 h-2 rounded-full bg-neutral-400 cursor-pointer hover:bg-[var(--accent)] transition-all"></div>
+        </div>
+        <div class="hidden md:flex items-center justify-end gap-2 w-1/3">
+            <button id="prevBtn" class="p-2 rounded-full hover:bg-white/10 transition-colors" style="color: var(--header-text); opacity: 0.6;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button id="nextBtn" class="p-2 rounded-full hover:bg-white/10 transition-colors" style="color: var(--header-text); opacity: 0.6;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+        <div class="md:hidden flex items-center justify-end w-auto text-xs gap-1 opacity-80" style="color: var(--header-text);"><span class="font-display font-bold tracking-widest uppercase">Swipe</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div>
+    </nav>
+
+    <main id="slider" class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar w-full pt-24 md:pt-28 pb-6 md:pb-10 px-4 md:px-10 gap-x-4 md:gap-x-12 scroll-smooth" style="mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
+
+        <!-- Slide 1: Hero -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 z-0">
+                <img src="img/hero.jpg" class="w-full h-full object-cover" alt="Kids at the Boys &amp; Girls Club">
+                <div class="absolute inset-0 bg-[var(--primary)]/50"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+            </div>
+            <div class="flex flex-col z-10 p-6 md:p-10 h-full justify-between">
+                <div class="flex animate-on-scroll items-start justify-between">
+                    <span class="text-[10px] text-[var(--accent)] uppercase tracking-widest font-bold border border-[var(--accent)]/40 px-2 py-1 rounded bg-black/30 backdrop-blur-md">Impact Story</span>
+                </div>
+                <div class="mt-auto">
+                    <h1 class="leading-[0.9] animate-on-scroll text-4xl md:text-5xl tracking-wide font-display uppercase text-white mb-4 drop-shadow-lg">Great Futures<br><span class="text-[var(--accent)]">Start HERE.</span></h1>
+                    <div class="animate-on-scroll">
+                        <p class="text-sm text-neutral-100 max-w-[90%] border-l-4 border-[var(--accent)] pl-4 font-medium">Boys &amp; Girls Club of the Permian Basin serves nearly 1,000 kids every day in Odessa and Midland.</p>
+                    </div>
+                </div>
+                <div class="pt-4 border-t border-white/15 flex justify-between items-end animate-on-scroll">
+                    <div class="flex flex-col"><span class="text-[10px] text-neutral-300 uppercase mb-1 tracking-wider">Serving since</span><span class="font-display text-sm text-white">Odessa 1958 · Midland 1965</span></div>
+                    <div class="text-[var(--accent)] flex items-center gap-2 text-xs uppercase tracking-widest font-bold">Scroll <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Mission -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 z-0">
+                <img src="img/kids-1.jpg" class="w-full h-full object-cover" alt="Kids learning">
+                <div class="absolute inset-0 bg-[var(--primary-dark)]/70"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/55 to-black/80"></div>
+            </div>
+            <div class="flex flex-col h-full p-6 md:p-10 z-10">
+                <header class="flex animate-on-scroll items-center justify-between mb-6">
+                    <span class="font-mono text-xs text-[var(--accent)] font-bold">[02]</span>
+                    <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">Our Mission</span>
+                </header>
+                <div class="flex-grow flex flex-col justify-center space-y-6">
+                    <div class="animate-on-scroll">
+                        <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none mb-3">A Positive Place<br><span class="text-[var(--accent)]">For Kids.</span></h2>
+                        <div class="w-12 h-1 bg-[var(--accent)] mb-4"></div>
+                        <p class="text-sm text-neutral-100 leading-relaxed font-medium">To help young people become productive, caring and responsible citizens by providing enriching experiences in a positive environment.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 animate-on-scroll">
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Character &amp; Leadership</div></div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Academic Success</div></div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Healthy Lifestyles</div></div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Safe Community</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: The Need + Our Solution -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+            <div class="flex flex-col h-full p-6 md:p-10 z-10">
+                <header class="flex animate-on-scroll items-center justify-between mb-6">
+                    <span class="font-mono text-xs text-[var(--accent)] font-bold">[03]</span>
+                    <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">The Need</span>
+                </header>
+                <div class="flex-grow flex flex-col justify-center">
+                    <div class="animate-on-scroll bg-white/5 border border-white/15 rounded-lg p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2 bg-[var(--secondary)]/30 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            </div>
+                            <h2 class="text-lg md:text-xl text-white font-display font-black uppercase leading-tight">West Texas Kids Need More.</h2>
+                        </div>
+                        <p class="text-sm text-neutral-200 leading-relaxed">After-school hours are when kids are most at risk. Working parents in Odessa and Midland need a safe, affordable place where their children can learn, eat a healthy meal, and grow.</p>
+                    </div>
+                    <div class="flex justify-center my-3 animate-on-scroll text-white/30">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                    </div>
+                    <div class="animate-on-scroll bg-gradient-to-br from-[var(--accent)]/20 to-transparent border border-[var(--accent)]/40 rounded-lg p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2 bg-[var(--accent)] rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <h3 class="text-lg md:text-xl text-[var(--accent)] font-display font-black uppercase leading-tight">A Daily Safe Place.</h3>
+                        </div>
+                        <p class="text-sm text-neutral-200 leading-relaxed">Our Clubs open every weekday — with mentors, homework help, hot meals, the arts, sports, and a community that believes in every kid who walks through the door.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: By The Numbers -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 z-0">
+                <img src="img/kids-2.jpg" class="w-full h-full object-cover" alt="Group of kids">
+                <div class="absolute inset-0 bg-[var(--primary-dark)]/80"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/40"></div>
+            </div>
+            <div class="flex flex-col h-full p-6 md:p-10 z-10">
+                <header class="flex animate-on-scroll items-center justify-between mb-5">
+                    <span class="font-mono text-xs text-[var(--accent)] font-bold">[04]</span>
+                    <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">By The Numbers</span>
+                </header>
+                <div class="mb-4 animate-on-scroll">
+                    <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none">A Year At<br><span class="text-[var(--accent)]">The Club.</span></h2>
+                </div>
+                <div class="flex-grow grid grid-cols-2 gap-3 animate-on-scroll content-center">
+                    <div class="bg-white/10 border border-white/15 rounded p-3 backdrop-blur-sm">
+                        <div class="text-2xl md:text-3xl font-display font-black text-[var(--accent)] count-up" data-target="1,000">0</div>
+                        <div class="text-[10px] uppercase tracking-wider text-white/80 mt-1">Kids served daily</div>
+                    </div>
+                    <div class="bg-white/10 border border-white/15 rounded p-3 backdrop-blur-sm">
+                        <div class="text-2xl md:text-3xl font-display font-black text-[var(--accent)] count-up" data-target="73,400+">0</div>
+                        <div class="text-[10px] uppercase tracking-wider text-white/80 mt-1">Hot meals served</div>
+                    </div>
+                    <div class="bg-white/10 border border-white/15 rounded p-3 backdrop-blur-sm">
+                        <div class="text-2xl md:text-3xl font-display font-black text-[var(--accent)] count-up" data-target="17,000+">0</div>
+                        <div class="text-[10px] uppercase tracking-wider text-white/80 mt-1">Snacks served</div>
+                    </div>
+                    <div class="bg-white/10 border border-white/15 rounded p-3 backdrop-blur-sm">
+                        <div class="text-2xl md:text-3xl font-display font-black text-[var(--accent)] count-up" data-target="450,000+">0</div>
+                        <div class="text-[10px] uppercase tracking-wider text-white/80 mt-1">Reading questions answered</div>
+                    </div>
+                    <div class="col-span-2 bg-[var(--accent)]/15 border border-[var(--accent)]/40 rounded p-3 backdrop-blur-sm">
+                        <div class="flex items-baseline gap-3">
+                            <div class="text-3xl md:text-4xl font-display font-black text-[var(--accent)] count-up" data-target="86%">0</div>
+                            <div class="text-xs text-white font-medium leading-tight">of Club Seniors plan to complete a post-secondary degree</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Programs -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+            <div class="flex flex-col h-full p-6 md:p-10 z-10">
+                <header class="flex animate-on-scroll items-center justify-between mb-6">
+                    <span class="font-mono text-xs text-[var(--accent)] font-bold">[05]</span>
+                    <div class="p-2 bg-white/10 rounded-full backdrop-blur-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                    </div>
+                </header>
+                <div class="flex-grow flex flex-col justify-center">
+                    <div class="mb-5 animate-on-scroll">
+                        <h2 class="text-3xl md:text-4xl text-white font-display font-black tracking-tight uppercase leading-none drop-shadow-xl">What Happens<br><span class="text-[var(--accent)]">Every Day.</span></h2>
+                    </div>
+                    <div class="animate-on-scroll bg-[var(--primary-dark)]/70 p-4 rounded-lg backdrop-blur-md border border-white/10">
+                        <p class="leading-relaxed text-sm text-neutral-100 mb-4 font-medium">From the moment kids arrive, every hour is built around growth, fun, and a safe place to be a kid.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Power Hour Homework Help</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Stride Reading Academy</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Smart Moves</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Passport to Manhood</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Smart Girls</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Money Smarts</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Daily Hot Meal</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Arts &amp; UTPB Collab</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Sports &amp; Fitness</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Field Trips</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Gardening</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Where Your Dollar Goes -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+            <div class="flex flex-col h-full p-6 md:p-10 z-10">
+                <header class="flex animate-on-scroll items-center justify-between mb-5">
+                    <span class="font-mono text-xs text-[var(--accent)] font-bold">[06]</span>
+                    <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">How We're Funded</span>
+                </header>
+                <div class="mb-5 animate-on-scroll">
+                    <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none">Individuals Are<br><span class="text-[var(--accent)]">Our Foundation.</span></h2>
+                    <p class="text-xs text-white/80 mt-3 leading-relaxed">Nearly a third of our funding comes from people like you. Every gift keeps the doors open.</p>
+                </div>
+                <div class="flex-grow flex flex-col justify-center space-y-3 bar-stage animate-on-scroll">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1"><span class="text-xs font-display font-bold text-white uppercase tracking-wider">Individuals &amp; Corporations</span><span class="text-xs font-mono font-bold text-[var(--accent)]">31%</span></div>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-[var(--accent)] rounded-full animate-bar" style="width: 31%; animation-delay: 0.1s;"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1"><span class="text-xs font-display font-bold text-white uppercase tracking-wider">Program Fees</span><span class="text-xs font-mono font-bold text-white/70">30%</span></div>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/60 rounded-full animate-bar" style="width: 30%; animation-delay: 0.25s;"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1"><span class="text-xs font-display font-bold text-white uppercase tracking-wider">Private Foundations</span><span class="text-xs font-mono font-bold text-white/70">25%</span></div>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/60 rounded-full animate-bar" style="width: 25%; animation-delay: 0.4s;"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1"><span class="text-xs font-display font-bold text-white uppercase tracking-wider">United Way</span><span class="text-xs font-mono font-bold text-white/70">8%</span></div>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/60 rounded-full animate-bar" style="width: 8%; animation-delay: 0.55s;"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1"><span class="text-xs font-display font-bold text-white uppercase tracking-wider">Government</span><span class="text-xs font-mono font-bold text-white/70">4%</span></div>
+                        <div class="h-3 bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-white/60 rounded-full animate-bar" style="width: 4%; animation-delay: 0.7s;"></div></div>
+                    </div>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/10 animate-on-scroll">
+                    <p class="text-[11px] text-white/60 leading-relaxed italic">Source: Boys &amp; Girls Club of the Permian Basin annual revenue breakdown.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Partners -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+            <div class="flex flex-col h-full p-6 md:p-10 z-10">
+                <header class="flex animate-on-scroll items-center justify-between mb-6">
+                    <span class="font-mono text-xs text-[var(--accent)] font-bold">[07]</span>
+                    <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">Our Partners</span>
+                </header>
+                <div class="flex-grow flex flex-col justify-center">
+                    <div class="mb-6 animate-on-scroll">
+                        <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none">It Takes<br><span class="text-[var(--accent)]">A Village.</span></h2>
+                        <p class="text-xs text-white/80 mt-3 leading-relaxed">We don't do this alone. Schools, colleges, churches, and city governments stand with us.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 animate-on-scroll">
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">UTPB</div></div>
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Odessa College</div></div>
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Midland College</div></div>
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">West Texas Food Bank</div></div>
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">United Way</div></div>
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Special Olympics</div></div>
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Odessa &amp; Midland Schools</div></div>
+                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">City Governments</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: CTA -->
+        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-[var(--accent)]/50 border relative shadow-2xl rounded-xl">
+            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="flex flex-col h-full z-10 p-6 md:p-10 justify-center items-center">
+                <div class="animate-on-scroll text-center flex flex-col items-center">
+                    <img src="img/logo.png" alt="Boys &amp; Girls Club of the Permian Basin" class="h-16 w-auto object-contain mb-5 drop-shadow-lg">
+                    <h2 class="uppercase leading-tight text-3xl md:text-4xl font-black font-display mb-4 text-white">Join The<br><span class="text-[var(--accent)]">Village.</span></h2>
+                    <p class="leading-relaxed text-sm text-neutral-200 max-w-[90%] mx-auto mb-8">Your gift puts a kid in front of a hot meal, a tutor, a mentor, and a future. Every dollar stays in the Permian Basin.</p>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=S3SWK7LMNERXW&amp;source=url" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--accent)] text-[var(--primary-dark)] font-black rounded hover:bg-white transition-all hover:scale-105 shadow-lg shadow-[var(--accent)]/30">
+                        <span class="font-display uppercase tracking-widest text-sm">Donate Today</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <div class="pt-6 mt-6 border-t border-white/15 w-full max-w-[80%] flex flex-col gap-1 items-center">
+                        <a href="tel:+14323378389" class="text-xs text-white/90 hover:text-[var(--accent)] transition-colors font-medium">(432) 337-8389</a>
+                        <a href="mailto:Admin@basinkids.org" class="text-xs text-white/90 hover:text-[var(--accent)] transition-colors font-medium">Admin@basinkids.org</a>
+                        <a href="https://www.basinkids.org" target="_blank" rel="noopener" class="text-xs text-white/90 hover:text-[var(--accent)] transition-colors font-medium">basinkids.org</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>lucide.createIcons();</script>
+    <script>
+    (function () {
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('animate'); io.unobserve(e.target); } });
+        }, { threshold: 0.2, rootMargin: '0px -10% 0px -10%' });
+        document.querySelectorAll('.animate-on-scroll').forEach(function(el) { io.observe(el); });
+
+        var barStages = document.querySelectorAll('.bar-stage');
+        var barIO = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('animate'); barIO.unobserve(e.target); } });
+        }, { threshold: 0.4 });
+        barStages.forEach(function(el) { barIO.observe(el); });
+
+        var slider = document.getElementById('slider');
+        var slides = document.querySelectorAll('.slide-container');
+        var dots = document.getElementById('pagination-dots').children;
+        var updateDots = function(idx) {
+            Array.from(dots).forEach(function(d, i) {
+                d.className = i === idx
+                    ? 'w-2.5 h-2.5 rounded-full bg-[var(--accent)] cursor-pointer'
+                    : 'w-2 h-2 rounded-full bg-neutral-400 hover:bg-[var(--accent)]/70 cursor-pointer';
+            });
+        };
+        var slideIO = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) updateDots(Array.from(slides).indexOf(e.target));
+            });
+        }, { root: slider, threshold: 0.6 });
+        slides.forEach(function(s) { slideIO.observe(s); });
+        Array.from(dots).forEach(function(d, i) {
+            d.addEventListener('click', function() {
+                slides[i] && slides[i].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+            });
+        });
+        var scrollAmt = function() { return window.innerWidth < 768 ? window.innerWidth * 0.85 : 548; };
+        var nextBtn = document.getElementById('nextBtn');
+        var prevBtn = document.getElementById('prevBtn');
+        if (nextBtn) nextBtn.addEventListener('click', function() { slider.scrollBy({ left: scrollAmt(), behavior: 'smooth' }); });
+        if (prevBtn) prevBtn.addEventListener('click', function() { slider.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }); });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown') { slider.scrollBy({ left: scrollAmt(), behavior: 'smooth' }); }
+            if (e.key === 'ArrowLeft' || e.key === 'PageUp') { slider.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }); }
+        });
+
+        var countUpElements = document.querySelectorAll('.count-up');
+        var countUpObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    var target = el.dataset.target || el.textContent;
+                    var numMatch = target.replace(/,/g, '').match(/[\d.]+/);
+                    if (numMatch) {
+                        var targetNum = parseFloat(numMatch[0]);
+                        var prefix = target.match(/^[^\d]*/)[0] || '';
+                        var suffix = target.match(/[^\d]*$/)[0] || '';
+                        var hasCommas = target.indexOf(',') >= 0;
+                        var duration = 1800;
+                        var startTime = performance.now();
+                        var animate = function(currentTime) {
+                            var elapsed = currentTime - startTime;
+                            var progress = Math.min(elapsed / duration, 1);
+                            var eased = 1 - Math.pow(1 - progress, 3);
+                            var current = Math.floor(targetNum * eased);
+                            if (hasCommas) current = current.toLocaleString();
+                            el.textContent = prefix + current + suffix;
+                            el.classList.add('counting');
+                            if (progress < 1) { requestAnimationFrame(animate); }
+                            else { el.textContent = target; el.classList.remove('counting'); }
+                        };
+                        requestAnimationFrame(animate);
+                    }
+                    countUpObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        countUpElements.forEach(function(el) { countUpObserver.observe(el); });
+    })();
+    </script>
+</body>
+</html>

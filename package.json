@@ -1,0 +1,13 @@
+{
+  "name": "bgc-permian-basin-impact-deck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "og": "node build-og.mjs",
+    "pdf": "node build-pdf.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

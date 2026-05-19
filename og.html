@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Source+Serif+4:wght@500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+body {
+    font-family: 'Source Serif 4', serif;
+    background: linear-gradient(135deg, #004A99 0%, #0066CC 60%, #0080FF 100%);
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 80px;
+}
+.grid {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+}
+.bar {
+    width: 60px; height: 6px; background: #FFD200; margin-bottom: 28px;
+}
+.tag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #FFD200;
+    border: 1px solid rgba(255, 210, 0, 0.4);
+    background: rgba(0,0,0,0.25);
+    padding: 6px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    width: fit-content;
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+h1 .accent { color: #FFD200; }
+p.sub {
+    font-size: 26px;
+    font-weight: 500;
+    max-width: 900px;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.92);
+}
+.footer {
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    padding-top: 26px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer .org {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.footer .url {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFD200;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+.logo {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    height: 80px;
+}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<img class="logo" src="img/logo.png" alt="">
+<span class="tag">Impact Story</span>
+<h1>Great Futures<br><span class="accent">Start HERE.</span></h1>
+<div class="bar"></div>
+<p class="sub">Boys &amp; Girls Club of the Permian Basin serves nearly 1,000 kids every day in Odessa and Midland.</p>
+<div class="footer">
+    <span class="org">Boys &amp; Girls Club of the Permian Basin</span>
+    <span class="url">basinkids.org</span>
+</div>
+</body>
+</html>
