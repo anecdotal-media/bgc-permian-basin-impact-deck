@@ -53,7 +53,7 @@
 <body class="min-h-screen flex flex-col items-center selection:bg-[var(--accent)]/30">
     <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-3 backdrop-blur-md border-b border-black/10 h-16" style="background-color: var(--header-bg); color: var(--header-text);">
         <div class="flex items-center gap-3 w-auto md:w-1/3">
-            <img src="img/logo.png" alt="Boys &amp; Girls Club of the Permian Basin" class="h-10 w-auto object-contain">
+            <img src="img/logo.png" alt="Boys &amp; Girls Club of the Permian Basin" class="w-auto object-contain" style="height: 50px;">
         </div>
         <div id="pagination-dots" class="hidden sm:flex items-center justify-center gap-2 w-1/3">
             <div class="w-2 h-2 rounded-full bg-neutral-300 cursor-pointer hover:bg-[var(--primary)] transition-all"></div>
@@ -69,7 +69,7 @@
             <button id="prevBtn" class="p-2 rounded-full hover:bg-black/5 transition-colors" style="color: var(--header-text); opacity: 0.6;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
             <button id="nextBtn" class="p-2 rounded-full hover:bg-black/5 transition-colors" style="color: var(--header-text); opacity: 0.6;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
-        <div class="md:hidden flex items-center justify-end w-auto text-xs gap-1 opacity-80" style="color: var(--header-text);"><span class="font-display font-bold tracking-widest uppercase">Swipe</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div>
+        <div class="md:hidden flex items-center justify-end w-auto text-xs gap-1 opacity-80" style="color: var(--header-text);"><span class="font-display font-bold tracking-widest uppercase">Swipe</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
     </nav>
 
     <main id="slider" class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar w-full pt-24 md:pt-28 pb-6 md:pb-10 px-4 md:px-10 gap-x-4 md:gap-x-12 scroll-smooth" style="mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
@@ -77,9 +77,7 @@
         <!-- Slide 1: Hero -->
         <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
             <div class="absolute inset-0 z-0">
-                <video autoplay muted loop playsinline poster="img/youth-dev-hero-reading-girl.jpg" class="w-full h-full object-cover">
-                    <source src="img/youth-dev-hero-reading-girl.mp4" type="video/mp4">
-                </video>
+                <img src="img/youth-dev-hero-reading-girl.jpg" class="w-full h-full object-cover" alt="Kid smiling at the Club">
                 <div class="absolute inset-0 bg-[var(--primary)]/40"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
             </div>
@@ -119,10 +117,10 @@
                         <p class="text-sm text-neutral-100 leading-relaxed font-medium">To help young people become productive, caring and responsible citizens by providing enriching experiences in a positive environment.</p>
                     </div>
                     <div class="grid grid-cols-2 gap-3 animate-on-scroll">
-                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Character &amp; Leadership</div></div>
-                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Academic Success</div></div>
-                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Healthy Lifestyles</div></div>
-                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Safe Community</div></div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm flex items-center justify-center min-h-[60px]"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Character &amp; Leadership</div></div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm flex items-center justify-center min-h-[60px]"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Academic Success</div></div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm flex items-center justify-center min-h-[60px]"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Healthy Lifestyles</div></div>
+                        <div class="bg-white/10 border border-white/15 p-3 rounded text-center backdrop-blur-sm flex items-center justify-center min-h-[60px]"><div class="text-[var(--accent)] font-black uppercase text-xs tracking-wider">Safe Community</div></div>
                     </div>
                 </div>
             </div>
@@ -211,16 +209,16 @@
                         <h2 class="text-3xl md:text-4xl text-white font-display font-black tracking-tight uppercase leading-none drop-shadow-xl">What Happens<br><span class="text-[var(--accent)]">Every Day.</span></h2>
                     </div>
                     <div class="animate-on-scroll bg-[var(--primary-dark)]/70 p-4 rounded-lg backdrop-blur-md border border-white/10">
-                        <p class="leading-relaxed text-sm text-neutral-100 mb-4 font-medium">From the moment kids arrive, every hour is built around growth, fun, and a safe place to be a kid.</p>
+                        <p class="leading-relaxed text-sm text-neutral-100 mb-4 font-medium">From the moment a child arrives, every hour is built around growth, fun, and a safe place to be a kid.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Power Hour Homework Help</span>
-                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Stride Reading Academy</span>
-                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Smart Moves</span>
-                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Passport to Manhood</span>
-                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Smart Girls</span>
-                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Money Smarts</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Homework Help</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Literacy &amp; Reading</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Healthy Choices</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Leadership for Boys</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Leadership for Girls</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Money Management</span>
                             <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Daily Hot Meal</span>
-                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Arts &amp; UTPB Collab</span>
+                            <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Arts &amp; Creativity</span>
                             <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Sports &amp; Fitness</span>
                             <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Field Trips</span>
                             <span class="px-2 py-1 bg-[var(--accent)]/20 border border-[var(--accent)] rounded text-[10px] uppercase font-bold text-[var(--accent)]">Gardening</span>
@@ -239,7 +237,7 @@
                     <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">How We're Funded</span>
                 </header>
                 <div class="mb-5 animate-on-scroll">
-                    <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none">Individuals Are<br><span class="text-[var(--accent)]">Our Foundation.</span></h2>
+                    <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none">Individual Donors Are<br><span class="text-[var(--accent)]">Our Foundation.</span></h2>
                     <p class="text-xs text-white/80 mt-3 leading-relaxed">Nearly a third of our funding comes from people like you. Every gift keeps the doors open.</p>
                 </div>
                 <div class="flex-grow flex flex-col justify-center space-y-3 bar-stage animate-on-scroll">
@@ -270,28 +268,27 @@
             </div>
         </section>
 
-        <!-- Slide 7: Partners -->
+        <!-- Slide 7: Testimonials -->
         <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-white/10 border relative shadow-2xl rounded-xl">
             <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
             <div class="flex flex-col h-full p-6 md:p-10 z-10">
-                <header class="flex animate-on-scroll items-center justify-between mb-6">
+                <header class="flex animate-on-scroll items-center justify-between mb-5">
                     <span class="font-mono text-xs text-[var(--accent)] font-bold">[07]</span>
-                    <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">Our Partners</span>
+                    <span class="font-display text-[10px] font-bold uppercase tracking-widest text-white/70">From Parents</span>
                 </header>
-                <div class="flex-grow flex flex-col justify-center">
-                    <div class="mb-6 animate-on-scroll">
-                        <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none">It Takes<br><span class="text-[var(--accent)]">A Village.</span></h2>
-                        <p class="text-xs text-white/80 mt-3 leading-relaxed">We don't do this alone. Schools, colleges, churches, and city governments stand with us.</p>
+                <div class="mb-5 animate-on-scroll">
+                    <h2 class="text-2xl md:text-3xl text-white font-display font-black uppercase tracking-tight leading-none">In Their<br><span class="text-[var(--accent)]">Own Words.</span></h2>
+                </div>
+                <div class="flex-grow flex flex-col justify-center gap-3">
+                    <div class="animate-on-scroll bg-white rounded-lg p-4 shadow-xl">
+                        <div class="text-3xl font-bold leading-none text-[var(--primary)] -mb-1" style="font-family: Georgia, serif;">&ldquo;</div>
+                        <p class="text-[var(--primary-dark)] text-[13px] leading-relaxed font-medium">When I pick my son up, his homework is done, he&rsquo;s been fed &mdash; so when I get home, I just get to be a parent.</p>
+                        <p class="text-[10px] uppercase tracking-widest text-[var(--primary)] font-bold mt-3">&mdash; Nikki, Parent</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-2 animate-on-scroll">
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">UTPB</div></div>
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Odessa College</div></div>
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Midland College</div></div>
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">West Texas Food Bank</div></div>
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">United Way</div></div>
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Special Olympics</div></div>
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">Odessa &amp; Midland Schools</div></div>
-                        <div class="bg-white/10 border border-white/15 rounded p-2.5 text-center backdrop-blur-sm"><div class="text-white font-display font-bold uppercase text-[10px] tracking-wider">City Governments</div></div>
+                    <div class="animate-on-scroll bg-white rounded-lg p-4 shadow-xl">
+                        <div class="text-3xl font-bold leading-none text-[var(--primary)] -mb-1" style="font-family: Georgia, serif;">&ldquo;</div>
+                        <p class="text-[var(--primary-dark)] text-[13px] leading-relaxed font-medium">My child is getting enrichment. He&rsquo;s happy, he&rsquo;s safe, they feed him, they check on his well-being. The counselors are fun, encouraging, and friendly.</p>
+                        <p class="text-[10px] uppercase tracking-widest text-[var(--primary)] font-bold mt-3">&mdash; Megan, Parent</p>
                     </div>
                 </div>
             </div>
@@ -299,11 +296,14 @@
 
         <!-- Slide 8: CTA -->
         <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center bg-[var(--primary)] border-[var(--accent)]/50 border relative shadow-2xl rounded-xl">
-            <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+            <div class="absolute inset-0 z-0 bg-[var(--primary)]">
+                <img src="img/youth-dev-group-circle.jpg" class="w-full h-full object-cover" style="filter: grayscale(100%) contrast(1.1) brightness(1.05); mix-blend-mode: multiply;" alt="">
+                <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/85 via-[var(--primary)]/35 to-[var(--primary)]/20"></div>
+            </div>
+            <div class="absolute inset-0 bg-grid-pattern opacity-10 z-[1]"></div>
             <div class="flex flex-col h-full z-10 p-6 md:p-10 justify-center items-center">
                 <div class="animate-on-scroll text-center flex flex-col items-center">
-                    <img src="img/logo.png" alt="Boys &amp; Girls Club of the Permian Basin" class="h-16 w-auto object-contain mb-5 drop-shadow-lg">
-                    <h2 class="uppercase leading-tight text-3xl md:text-4xl font-black font-display mb-4 text-white">Join The<br><span class="text-[var(--accent)]">Village.</span></h2>
+                    <h2 class="uppercase leading-tight text-3xl md:text-4xl font-black font-display mb-4 text-white drop-shadow-lg">Join The<br><span class="text-[var(--accent)]">Village.</span></h2>
                     <p class="leading-relaxed text-sm text-neutral-200 max-w-[90%] mx-auto mb-8">Your gift puts a kid in front of a hot meal, a tutor, a mentor, and a future. Every dollar stays in the Permian Basin.</p>
                     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=S3SWK7LMNERXW&amp;source=url" target="_blank" rel="noopener" class="inline-flex items-center justify-center px-8 py-4 bg-[var(--accent)] text-[var(--primary-dark)] font-black rounded hover:bg-white transition-all hover:scale-105 shadow-lg shadow-[var(--accent)]/30">
                         <span class="font-display uppercase tracking-widest text-sm">Donate Today</span>
